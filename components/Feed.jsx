@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import PromptCard from './PromptCard'
-import Spinner from './Spinner'
 import { set } from 'mongoose'
 
 
