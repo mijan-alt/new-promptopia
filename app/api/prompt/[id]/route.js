@@ -30,12 +30,12 @@ export const GET= async (request, {params}) =>{
 
 export const PATCH = async (request, {params}) => {
       const {prompt, tag }  = await request.json();
-      console.log(prompt)
+    
 
       try {
         await connectToDB();
 
-         const existingPrompt = await Prompt.findbyId(params.id);
+         const existingPrompt = await Prompt.findById(params.id);
         
          if(!existingPrompt) return new Response('Prompt not found', {status: 404})
            existingPrompt.prompt = prompt;
