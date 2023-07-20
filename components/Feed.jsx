@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import PromptCard from './PromptCard'
+import { set } from 'mongoose'
 
 
 const PrompCardList = ({data, handleTagClick}) => {
@@ -31,8 +32,10 @@ const [searchText, setSearchText]= useState('')
 
 
 const handleSearchChange = (e)=> {
-
+     setSearchText(e.target.value)
 }
+
+console.log(searchText)
 
 useEffect(()=>{
   const fetchPosts = async () => {
