@@ -89,12 +89,12 @@ const handleTagClick =(tagName) => {
          searchText ? (
              <PrompCardList
              data={searchedResults}
-             handleTagClick = {()=>handleTagClick()}
+             handleTagClick = {handleTagClick}
           />
               ) : (
              <PrompCardList
                data={posts}
-              handleTagClick = {()=>handleTagClick()}
+              handleTagClick = {handleTagClick}
        />
          )}
         
