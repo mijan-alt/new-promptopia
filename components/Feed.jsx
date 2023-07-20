@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import PromptCard from './PromptCard'
+import Spinner from './Spinner'
 import { set } from 'mongoose'
 
 
@@ -10,7 +11,7 @@ const PrompCardList = ({data, handleTagClick}) => {
   console.log(data)
     return (
       <div className="mt-16 prompt_layout">
-             {console.log(data)}
+             
             {data.map((post)=> (
             
                 <PromptCard
@@ -50,6 +51,7 @@ console.log(searchText)
 
 useEffect(()=>{
   const fetchPosts = async () => {
+    
     const response = await fetch('/api/prompt');
     const data = await response.json();
     setPosts(data)
