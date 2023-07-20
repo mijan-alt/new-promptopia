@@ -10,7 +10,7 @@ function Profile() {
       const router = useRouter();
      const { data: session} = useSession();
       const [posts, setPosts] = useState([])
-      console.log(posts)
+    
 
     useEffect(()=>{
         const fetchPosts = async () => {
