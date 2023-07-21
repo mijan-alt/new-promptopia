@@ -47,7 +47,7 @@ const handleSearchChange = (e)=> {
 }
 
 
-console.log(searchedResults)
+
 
 useEffect(()=>{
   const fetchPosts = async () => {
