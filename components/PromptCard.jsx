@@ -19,6 +19,10 @@ function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
     navigator.clipboard.writeText(post.prompt); //copy the prompt text and write it to the clip board
     setTimeout(()=>setCopied(""), 3000); //after 3s, update the 'copied' state to an  empty string
   }
+
+  const handleProfileClick = () => {
+         router.push('/user-profile');
+  }
   return (
     <div className='promt_card'>
         <div className='flex justify-between items-start gap-5'>
@@ -31,6 +35,7 @@ function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
                   width= {40}
                   height={40}
                   className="rounded-full object-contain"
+                  onClick={handleProfileClick}
                   />  
 
                   <div className="flex flex-col">
@@ -50,6 +55,7 @@ function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
                         : 'assets/icons/copy.svg'}
                         width={12}
                         height={12}
+                        
                      />
                </div>
                {/* button ends */}
