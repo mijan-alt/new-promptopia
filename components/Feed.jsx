@@ -40,7 +40,6 @@ const handleSearchChange = (e)=> {
      setSearchTimeOut(
         setTimeout(()=>{
             const searchResult = filterPrompts(e.target.value);
-            console.log(searchResult)
              setSearchedResults(searchResult)
         }, 500)
      )
@@ -64,7 +63,7 @@ const filterPrompts = (searchtext) => {
   const regex = new RegExp(searchtext , "i")
   return posts.filter(
     (item)=>
-       regex.test(item.username) || regex.test(item.tag) ||regex.text(item.prompt)
+       regex.test(item.username) || regex.test(item.tag) ||regex.test(item.prompt)
   )
 }
 
