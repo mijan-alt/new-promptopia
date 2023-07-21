@@ -59,7 +59,7 @@ useEffect(()=>{
 }, [])
 
 const filterPrompts = (searchtext) => {
-  const regex= newRegExp(searchtext , "i")
+  const regex= new RegExp(searchtext , "i")
   return posts.filter(
     (item)=>
        regex.test(item.username) || regex.test(item.tag) ||regex.text(item.prompt)
