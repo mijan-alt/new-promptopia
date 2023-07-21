@@ -7,7 +7,7 @@ import { set } from 'mongoose'
 
 const PrompCardList = ({data, handleTagClick}) => {
 
-  console.log(data)
+  
     return (
       <div className="mt-16 prompt_layout">
              
@@ -40,13 +40,15 @@ const handleSearchChange = (e)=> {
      setSearchTimeOut(
         setTimeout(()=>{
             const searchResult = filterPrompts(e.target.value);
+            console.log(searchResult)
              setSearchedResults(searchResult)
         }, 500)
      )
 
 }
 
-console.log(searchText)
+
+console.log(searchedResults)
 
 useEffect(()=>{
   const fetchPosts = async () => {
@@ -59,7 +61,7 @@ useEffect(()=>{
 }, [])
 
 const filterPrompts = (searchtext) => {
-  const regex= new RegExp(searchtext , "i")
+  const regex = new RegExp(searchtext , "i")
   return posts.filter(
     (item)=>
        regex.test(item.username) || regex.test(item.tag) ||regex.text(item.prompt)
