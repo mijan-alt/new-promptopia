@@ -31,7 +31,7 @@ const [posts, setPosts]= useState([]);
 const [searchText, setSearchText]= useState('');
 const [searchTimeOut, setSearchTimeOut] = useState(null);
 const [searchedResults, setSearchedResults] = useState([]);
-const [loading, setLoading]= useState(true);
+
 
 const handleSearchChange = (e)=> {
    clearTimeout(searchTimeOut)
@@ -79,7 +79,7 @@ const handleTagClick =(tagName) => {
                  type='text'
                  placeholder="Search for a tag or username"
                  value={searchText}
-                 onChange={()=>handleSearchChange()}
+                 onChange={handleSearchChange}
                  required
                  className='search_input peer'
              />
