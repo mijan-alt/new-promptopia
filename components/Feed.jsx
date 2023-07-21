@@ -38,7 +38,7 @@ const handleSearchChange = (e)=> {
      setSearchText(e.target.value)
 
      setSearchTimeOut(
-        setTimeOut(()=>{
+        setTimeout(()=>{
             const searchResult = filterPrompts(e.target.value);
              setSearchedResults(searchResult)
         }, 500)
