@@ -10,11 +10,8 @@ export const GET= async (req) =>{
    
 
          return new Response(JSON.stringify(prompts), {
-            status: 200,
-            headers: {
-                "content-type"  : "application/json",
-                "cache-control" : "private, no-cache, no-store, max-age=0, must-revalidate",
-              },
+            status: 200
+            
          })
     } catch(error) {
         return new Response(JSON.stringify('Failed to fetch all prompts'), {
