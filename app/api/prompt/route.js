@@ -5,7 +5,7 @@ export const GET= async (req) =>{
     
     try {
         await connectToDB();
-        const prompts = await Prompt.find({}).populate('creator');
+        const prompts = await Prompt.find({}).populate('creator'); //find all documents in the collection and populate the creator field
         
    
 

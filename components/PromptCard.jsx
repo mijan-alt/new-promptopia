@@ -20,14 +20,24 @@ function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
     setTimeout(()=>setCopied(""), 3000); //after 3s, update the 'copied' state to an  empty string
   }
 
+  
+
   const handleProfileClick = () => {
-         router.push('/user-profile');
-  }
+     if(post.creator._id === session?.user.id){
+      router.push('/profile');
+     } else {
+        router.push(`/profile/${post.creator._id}?name=${post.creator.username}`);
+     }
+        
+  } 
+       
+  
   return (
     <div className='promt_card'>
         <div className='flex justify-between items-start gap-5'>
                <div className="flex-1 flex justify-start items-center
-               gap-3 cursor-pointer">
+               gap-3 cursor-pointer"
+                onClick={handleProfileClick}>
       
                   <Image
                   src={post.creator.image} 
@@ -35,7 +45,7 @@ function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
                   width= {40}
                   height={40}
                   className="rounded-full object-contain"
-                  onClick={handleProfileClick}
+                  
                   />  
 
                   <div className="flex flex-col">
@@ -87,5 +97,4 @@ function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
     </div>
   )
 }
-
-export default PromptCard
+export default PromptCard;
