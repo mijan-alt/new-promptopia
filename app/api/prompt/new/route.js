@@ -3,7 +3,7 @@ import Prompt from "@models/prompt";
 
 export const POST = async (req, res) =>{
     /**get the incoming data from the front end and destructure it */
-    const {userId, prompt, tag}= await req.json();
+    const {userId, prompt, tag}= await req.body
 
     try {
        await connectToDB();
